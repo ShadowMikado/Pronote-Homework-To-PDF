@@ -1,5 +1,6 @@
 {
   "Username": "Nom d'utilisateur",
   "Password": "Mot de passe",
-  "ENT Url": "url de votre pronote"
+  "ENT Url": "url de votre pronote",
+  "Done Homeworks": true
 }
