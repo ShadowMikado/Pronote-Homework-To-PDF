@@ -51,6 +51,7 @@ pdf.set_font("Arial", size=7)
 username = config.get("Username")
 password = config.get("Password")
 ent_url = config.get("ENT Url")
+done_homeworks = config.get("Done Homeworks")
 
 
 @detect_error
@@ -84,6 +85,9 @@ def convert():
         for hw in sorted_homeworks:
             if hw.subject == "": return
             if hw.subject is None: return
+            if done_homeworks != True:
+                if hw.done:
+                    continue
             ligne += 1
             pdf.cell(150, 10,
                      txt=f"""[...] Pour le {hw.date.strftime('%d/%m/%Y')} ({hw.subject.name}): {hw.description}""",
